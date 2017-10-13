@@ -1,13 +1,47 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Modal, TouchableHighlight } from 'react-native';
+import FAB from 'react-native-fab';
+import AddItem from './components/AddItem';
+
 
 export default class App extends React.Component {
+
+  constructor(){
+    super()
+    this.state = {
+      debug: "",
+      modalVisible: false,
+    };
+  }
+
+  setModalVisible = (visible) => {
+   this.setState({modalVisible: visible});
+ }
+
+  add_item = () => {
+
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Text> {this.state.debug} </Text>
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={this.state.modalVisible}
+          onRequestClose={() => {alert("Modal has been closed.")}} >
+          <AddItem />
+          <TouchableHighlight onPress={() => {
+            this.setModalVisible(!this.state.modalVisible)
+          }}>
+            <Text>Hide Modal</Text>
+          </TouchableHighlight>
+        </Modal>
+        <FAB buttonColor="red" iconTextColor="#FFFFFF"
+                               onClickAction={() => {  this.setModalVisible() }}
+                               visible={true}
+        />
       </View>
     );
   }
