@@ -35,7 +35,7 @@ export default class AddItem extends React.Component {
         <TouchableHighlight
         style={styles.add_item_button}
         onPress={() => {
-          this.props.add_item()
+          this.props.add_item( this.state.name, this.state.amount );
         }}>
           <Text>Add Item</Text>
         </TouchableHighlight>
