@@ -7,6 +7,7 @@ import { StyleSheet,
          TouchableHighlight } from 'react-native';
 import FAB from 'react-native-fab';
 import AddItem from './components/AddItem';
+import Item from './components/Item';
 
 
 export default class App extends React.Component {
@@ -16,6 +17,7 @@ export default class App extends React.Component {
     this.state = {
       debug: "",
       modalVisible: false,
+      items: []
     };
   }
 
@@ -25,6 +27,10 @@ export default class App extends React.Component {
 
   setModalVisible = (visible) => {
    this.setState({modalVisible: visible});
+ }
+
+ openItem = (name) => {
+   //this.setState({debug: "Test"});
  }
 
   add_item = (name, amount) => {
@@ -37,23 +43,23 @@ export default class App extends React.Component {
     }
   }
 
-  get_items = () => {
+  get_items = () =>
+  {
     AsyncStorage.getAllKeys((err, keys) => {
       AsyncStorage.multiGet(keys, (err, stores) => {
-       stores.map((result, i, store) => {
-         // get at each store's key/value so you can work with it
-         let key = store[i][0];
-         let value = store[i][1];
-         this.setState({ debug: this.state.debug + key + value });
-        });
+        this.setState({ items: stores });
       });
     });
   }
 
   render() {
+    let items = this.state.items.map((result, i, store) =>
+       <Item key={i} name={store[i][0]} amount={store[i][1]} />
+     );
     return (
       <View style={styles.container}>
         <Text> {this.state.debug} </Text>
+        {items}
         <Modal
           animationType="slide"
           transparent={false}
@@ -79,7 +85,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
