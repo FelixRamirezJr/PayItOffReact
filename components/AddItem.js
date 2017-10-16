@@ -11,11 +11,12 @@ import { StyleSheet,
 
 export default class AddItem extends React.Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      name: "",
-      amount: ""
+      name: this.props.existingName,
+      amount: this.props.existingAmount,
+      previousAmounts: this.props.existingPreviousAmounts
     }
   }
 

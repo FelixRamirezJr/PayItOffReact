@@ -17,10 +17,14 @@ export default class Item extends React.Component {
     };
   }
 
+  edit = () => {
+    this.props.openItem( this.props.name, this.props.amount );
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <TouchableHighlight onPress={() => { alert('helo') }}>
+        <TouchableHighlight onPress={() => { this.edit() }}>
           <Text>
             { this.props.name } , { this.props.amount }
           </Text>

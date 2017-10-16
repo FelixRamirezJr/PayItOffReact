@@ -9,6 +9,11 @@ import FAB from 'react-native-fab';
 import AddItem from './components/AddItem';
 import Item from './components/Item';
 
+const ItemJson = {
+  name: "",
+  amount: "",
+  previousAmounts: []
+}
 
 export default class App extends React.Component {
 
@@ -17,7 +22,11 @@ export default class App extends React.Component {
     this.state = {
       debug: "",
       modalVisible: false,
-      items: []
+      items: [],
+      existingModalVisisble: false,
+      existingName: "",
+      existingAmount: "",
+      existingPreviousAmounts: []
     };
   }
 
@@ -25,12 +34,23 @@ export default class App extends React.Component {
     this.get_items();
   }
 
+  // Add new item modal
   setModalVisible = (visible) => {
    this.setState({modalVisible: visible});
- }
+  }
 
- openItem = (name) => {
-   //this.setState({debug: "Test"});
+  // Edit existing item modal
+  existingModalVisisble = (visible) => {
+   this.setState({existingModalVisisble: visible});
+  }
+
+ openItem = (name, amount) => {
+   this.setState({
+     existingName: name,
+     existingAmount: amount,
+     existingPreviousAmounts: []
+   });
+   this.existingModalVisisble(true);
  }
 
   add_item = (name, amount) => {
@@ -54,26 +74,30 @@ export default class App extends React.Component {
 
   render() {
     let items = this.state.items.map((result, i, store) =>
-       <Item key={i} name={store[i][0]} amount={store[i][1]} />
+       <Item key={i} name={store[i][0]} amount={store[i][1]} openItem={this.openItem} edit={false} />
      );
     return (
       <View style={styles.container}>
-        <Text> {this.state.debug} </Text>
         {items}
+
         <Modal
           animationType="slide"
           transparent={false}
-          visible={this.state.modalVisible}
+          visible={this.state.existingModalVisisble}
           onRequestClose={() => {alert("Modal has been closed.")}} >
-          <AddItem  add_item={this.add_item} />
+          <AddItem add_item={this.add_item}
+                   name={this.state.editName}
+                   amount={this.state.editAmount}
+                   previousAmounts={this.state.editPreviousAmounts}
+          />
           <TouchableHighlight onPress={() => {
-            this.setModalVisible(!this.state.modalVisible)
+            this.existingModalVisisble(!this.state.existingModalVisisble)
           }}>
             <Text>Hide Modal</Text>
           </TouchableHighlight>
         </Modal>
         <FAB buttonColor="red" iconTextColor="#FFFFFF"
-                               onClickAction={() => {  this.setModalVisible() }}
+                               onClickAction={() => {  this.existingModalVisisble(true) }}
                                visible={true}
         />
       </View>
