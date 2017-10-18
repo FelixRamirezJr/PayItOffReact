@@ -6,7 +6,7 @@ import { StyleSheet,
          AsyncStorage,
          TouchableHighlight } from 'react-native';
 import FAB from 'react-native-fab';
-import AddItem from './components/AddItem';
+import ItemForm from './components/ItemForm';
 import Item from './components/Item';
 
 const ItemJson = {
@@ -24,9 +24,9 @@ export default class App extends React.Component {
       modalVisible: false,
       items: [],
       existingModalVisisble: false,
-      existingName: "",
-      existingAmount: "",
-      existingPreviousAmounts: []
+      editName: "",
+      editAmount: "",
+      editPreviousAmounts: []
     };
   }
 
@@ -45,10 +45,12 @@ export default class App extends React.Component {
   }
 
  openItem = (name, amount) => {
+   //alert(name);
+   //alert(amount);
    this.setState({
-     existingName: name,
-     existingAmount: amount,
-     existingPreviousAmounts: []
+     editName: name,
+     editAmount: amount,
+     editPreviousAmounts: []
    });
    this.existingModalVisisble(true);
  }
@@ -85,19 +87,24 @@ export default class App extends React.Component {
           transparent={false}
           visible={this.state.existingModalVisisble}
           onRequestClose={() => {alert("Modal has been closed.")}} >
-          <AddItem add_item={this.add_item}
+          <ItemForm add_item={this.add_item}
                    name={this.state.editName}
                    amount={this.state.editAmount}
                    previousAmounts={this.state.editPreviousAmounts}
           />
           <TouchableHighlight onPress={() => {
-            this.existingModalVisisble(!this.state.existingModalVisisble)
+            this.existingModalVisisble(!this.state.existingModalVisisble);
           }}>
             <Text>Hide Modal</Text>
           </TouchableHighlight>
         </Modal>
         <FAB buttonColor="red" iconTextColor="#FFFFFF"
-                               onClickAction={() => {  this.existingModalVisisble(true) }}
+                               onClickAction={() => {
+                                 this.setState({ editName: "",
+                                                 editAmount: "",
+                                                 editPreviousAmounts: []});
+                                 this.existingModalVisisble(true);
+                               }}
                                visible={true}
         />
       </View>
@@ -109,5 +116,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    marginTop: 15
   },
 });

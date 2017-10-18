@@ -9,18 +9,28 @@ import { StyleSheet,
        } from 'react-native';
 
 
-export default class AddItem extends React.Component {
+export default class ItemForm extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      name: this.props.existingName,
-      amount: this.props.existingAmount,
-      previousAmounts: this.props.existingPreviousAmounts
+      name: this.props.name,
+      amount: this.props.amount,
+      previousAmounts: this.props.previousAmounts
     }
   }
 
   render() {
+    // Get the text for the item buttons
+    var newItem = false;
+    if ( this.props.name == 0 && this.props.amount == 0 ) {
+      newItem = true;
+    }
+    var mainItemFunction = "Update";
+    if ( newItem ) {
+      mainItemFunction = "Add";
+    }
+
     return (
       <View style={styles.container} >
         <TextInput style={styles.input}
@@ -38,7 +48,7 @@ export default class AddItem extends React.Component {
         onPress={() => {
           this.props.add_item( this.state.name, this.state.amount );
         }}>
-          <Text>Add Item</Text>
+          <Text> { mainItemFunction } </Text>
         </TouchableHighlight>
 
       </View>
