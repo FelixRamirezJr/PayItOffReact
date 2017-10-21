@@ -59,8 +59,7 @@ export default class App extends React.Component {
  removeItem = (name) => {
    try {
      AsyncStorage.removeItem(name);
-     this.get_items();
-     this.existingModalVisisble(!this.state.existingModalVisisble);
+     this.refresh();
    } catch (error) {
      console.log("Error could not save data");
    }
@@ -69,11 +68,15 @@ export default class App extends React.Component {
   add_item = (name, amount) => {
     try {
       AsyncStorage.setItem(name, amount);
-      this.get_items();
-      this.existingModalVisisble(!this.state.existingModalVisisble);
+      this.refresh();
     } catch (error) {
       console.log("Error could not save data");
     }
+  }
+
+  refresh = () => {
+    this.get_items();
+    this.existingModalVisisble(!this.state.existingModalVisisble);
   }
 
   get_items = () =>
