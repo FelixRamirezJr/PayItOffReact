@@ -20,15 +20,24 @@ export default class ItemForm extends React.Component {
     }
   }
 
+  delete = () => {
+
+  }
+
   render() {
     // Get the text for the item buttons
     var newItem = false;
+    var deleteButton = null;
     if ( this.props.name == 0 && this.props.amount == 0 ) {
       newItem = true;
     }
     var mainItemFunction = "Update";
     if ( newItem ) {
       mainItemFunction = "Add";
+    }
+
+    if( !newItem ) {
+      deleteButton = <Button onPress={this.delete} title="Remove" />;
     }
 
     return (
@@ -50,6 +59,7 @@ export default class ItemForm extends React.Component {
         }}>
           <Text> { mainItemFunction } </Text>
         </TouchableHighlight>
+        { deleteButton }
 
       </View>
     );

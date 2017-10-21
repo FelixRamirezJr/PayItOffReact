@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet,
          Text,
          View,
+         ScrollView,
          Modal,
          AsyncStorage,
          TouchableHighlight } from 'react-native';
@@ -80,24 +81,26 @@ export default class App extends React.Component {
      );
     return (
       <View style={styles.container}>
-        {items}
+        <ScrollView>
+          {items}
 
-        <Modal
-          animationType="slide"
-          transparent={false}
-          visible={this.state.existingModalVisisble}
-          onRequestClose={() => {alert("Modal has been closed.")}} >
-          <ItemForm add_item={this.add_item}
-                   name={this.state.editName}
-                   amount={this.state.editAmount}
-                   previousAmounts={this.state.editPreviousAmounts}
-          />
-          <TouchableHighlight onPress={() => {
-            this.existingModalVisisble(!this.state.existingModalVisisble);
-          }}>
-            <Text>Hide Modal</Text>
-          </TouchableHighlight>
-        </Modal>
+          <Modal
+            animationType="slide"
+            transparent={false}
+            visible={this.state.existingModalVisisble}
+            onRequestClose={() => {alert("Modal has been closed.")}} >
+            <ItemForm add_item={this.add_item}
+                     name={this.state.editName}
+                     amount={this.state.editAmount}
+                     previousAmounts={this.state.editPreviousAmounts}
+            />
+            <TouchableHighlight onPress={() => {
+              this.existingModalVisisble(!this.state.existingModalVisisble);
+            }}>
+              <Text>Hide Modal</Text>
+            </TouchableHighlight>
+          </Modal>
+        </ScrollView>
         <FAB buttonColor="red" iconTextColor="#FFFFFF"
                                onClickAction={() => {
                                  this.setState({ editName: "",
