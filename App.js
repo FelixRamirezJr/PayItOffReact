@@ -45,23 +45,33 @@ export default class App extends React.Component {
    this.setState({existingModalVisisble: visible});
   }
 
- openItem = (name, amount) => {
-   //alert(name);
-   //alert(amount);
-   this.setState({
-     editName: name,
-     editAmount: amount,
-     editPreviousAmounts: []
-   });
-   this.existingModalVisisble(true);
+  openItem = (name, amount) => {
+    //alert(name);
+    //alert(amount);
+    this.setState({
+      editName: name,
+      editAmount: amount,
+      editPreviousAmounts: []
+    });
+    this.existingModalVisisble(true);
+  }
+
+ removeItem = (name) => {
+   try {
+     AsyncStorage.removeItem(name);
+     this.get_items();
+     this.existingModalVisisble(!this.state.existingModalVisisble);
+   } catch (error) {
+     console.log("Error could not save data");
+   }
  }
 
   add_item = (name, amount) => {
     try {
       AsyncStorage.setItem(name, amount);
-      this.get_items()
+      this.get_items();
+      this.existingModalVisisble(!this.state.existingModalVisisble);
     } catch (error) {
-      this.setState({ debug: error.toString() });
       console.log("Error could not save data");
     }
   }
@@ -93,6 +103,7 @@ export default class App extends React.Component {
                      name={this.state.editName}
                      amount={this.state.editAmount}
                      previousAmounts={this.state.editPreviousAmounts}
+                     removeItem={this.removeItem}
             />
             <TouchableHighlight onPress={() => {
               this.existingModalVisisble(!this.state.existingModalVisisble);

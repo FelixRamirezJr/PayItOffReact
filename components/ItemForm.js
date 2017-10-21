@@ -21,7 +21,7 @@ export default class ItemForm extends React.Component {
   }
 
   delete = () => {
-
+    this.props.removeItem( this.props.name );
   }
 
   render() {
