@@ -90,7 +90,7 @@ export default class App extends React.Component {
 
   render() {
     let items = this.state.items.map((result, i, store) =>
-       <Item key={i} name={store[i][0]} amount={store[i][1]} openItem={this.openItem} edit={false} />
+       <Item key={i} name={store[i][0]} amount={store[i][1]} openItem={this.openItem} edit={false} removeItem={this.removeItem} add_item={this.add_item} />
      );
     return (
       <View style={styles.container}>
