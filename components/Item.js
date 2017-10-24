@@ -42,7 +42,6 @@ export default class Item extends React.Component {
     } else {
       this.props.add_item( this.props.name, diff.toString() );
     }
-    this.setState({ promptVisible:false });
   }
 
   pay = () => {
@@ -81,7 +80,11 @@ export default class Item extends React.Component {
               promptVisible: false,
               message: "You cancelled"
             }) }
-            onSubmit={ (value) => this.updateAmount(value)
+            onSubmit={ (value) => {
+              alert('click');
+              this.setState({promptVisible: false});
+              this.updateAmount(value);
+            }
           }/>
 
       </View>

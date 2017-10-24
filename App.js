@@ -76,7 +76,7 @@ export default class App extends React.Component {
 
   refresh = () => {
     this.get_items();
-    this.existingModalVisisble(!this.state.existingModalVisisble);
+    this.existingModalVisisble(false);
   }
 
   get_items = () =>
@@ -108,10 +108,10 @@ export default class App extends React.Component {
                      previousAmounts={this.state.editPreviousAmounts}
                      removeItem={this.removeItem}
             />
-            <TouchableHighlight onPress={() => {
+            <TouchableHighlight style={styles.hideModal} onPress={() => {
               this.existingModalVisisble(!this.state.existingModalVisisble);
             }}>
-              <Text>Hide Modal</Text>
+              <Text> x </Text>
             </TouchableHighlight>
           </Modal>
         </ScrollView>
@@ -135,4 +135,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginTop: 15
   },
+  hideModal: {
+    position: 'absolute',
+    top: 25,
+    right: 25
+  }
 });

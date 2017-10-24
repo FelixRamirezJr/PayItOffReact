@@ -37,7 +37,7 @@ export default class ItemForm extends React.Component {
     }
 
     if( !newItem ) {
-      deleteButton = <Button onPress={this.delete} title="Remove" />;
+      deleteButton = <Button style={styles.remove_item_button} onPress={this.delete} title="Remove" />;
     }
 
     return (
@@ -57,7 +57,7 @@ export default class ItemForm extends React.Component {
         onPress={() => {
           this.props.add_item( this.state.name, this.state.amount );
         }}>
-          <Text> { mainItemFunction } </Text>
+          <Text style={styles.mainItemFunction}> { mainItemFunction } </Text>
         </TouchableHighlight>
         { deleteButton }
 
@@ -79,5 +79,10 @@ const styles = StyleSheet.create({
   },
   add_item_button: {
     marginTop: 5
+  },
+  remove_item_button: {
+    backgroundColor: 'red',
+    marginTop: 15,
+    color: 'red'
   }
 });
