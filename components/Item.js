@@ -34,11 +34,10 @@ export default class Item extends React.Component {
     else if( diff < 0 ) {
       // overpaid!
       alert("You overpaid! But congrats you paid off " + this.props.name);
-      //this.props.removeItem( this.props.name );
+      this.props.removeItem( this.props.name );
     } else if( diff == 0 ) {
       alert("Congrats! You paid off " + this.props.name);
-      //this.props.removeItem( this.props.name );
-      //remove
+      this.props.removeItem( this.props.name );
     } else {
       this.props.add_item( this.props.name, diff.toString() );
     }
