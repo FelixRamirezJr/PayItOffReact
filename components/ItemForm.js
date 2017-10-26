@@ -84,5 +84,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
     marginTop: 15,
     color: 'red'
+  },
+  mainItemFunction: {
+    marginBottom: 15
   }
 });

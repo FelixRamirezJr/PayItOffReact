@@ -46,8 +46,6 @@ export default class App extends React.Component {
   }
 
   openItem = (name, amount) => {
-    //alert(name);
-    //alert(amount);
     this.setState({
       editName: name,
       editAmount: amount,
@@ -101,7 +99,7 @@ export default class App extends React.Component {
             animationType="slide"
             transparent={false}
             visible={this.state.existingModalVisisble}
-            onRequestClose={() => {alert("Modal has been closed.")}} >
+            onRequestClose={() => {}} >
             <ItemForm add_item={this.add_item}
                      name={this.state.editName}
                      amount={this.state.editAmount}
