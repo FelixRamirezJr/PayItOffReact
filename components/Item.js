@@ -81,7 +81,6 @@ export default class Item extends React.Component {
               message: "You cancelled"
             }) }
             onSubmit={ (value) => {
-              alert('click');
               this.setState({promptVisible: false});
               this.updateAmount(value);
             }
