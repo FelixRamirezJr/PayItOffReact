@@ -29,9 +29,11 @@ export default class Item extends React.Component {
     var diff = parseFloat( this.props.amount ) - parseFloat( sub_amount );
     if (diff == undefined || diff == NaN){
       alert("Looks like there is a bug with this... Going to set to zero");
-      //this.props.add_item( this.props.name, 0 );
+      return false;
+    } else {
+      diff = +diff.toFixed(2);
     }
-    else if( diff < 0 ) {
+    if( diff < 0 ) {
       // overpaid!
       alert("You overpaid! But congrats you paid off " + this.props.name);
       this.props.removeItem( this.props.name );
