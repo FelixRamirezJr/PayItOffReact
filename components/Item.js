@@ -103,7 +103,8 @@ const styles = StyleSheet.create({
     marginBottom: (Platform.OS === 'ios') ? 5 : 20,
     marginTop: (Platform.OS === 'ios') ? 5 : 20,
     fontSize: (Platform.OS === 'ios') ? 15 : 25,
-    textAlign: 'center'
+    textAlign: 'center',
+    fontWeight: 'bold'
   },
   itemAmount: {
     marginBottom: (Platform.OS === 'ios') ? 5 : 20,
