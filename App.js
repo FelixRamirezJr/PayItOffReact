@@ -9,6 +9,7 @@ import { StyleSheet,
 import FAB from 'react-native-fab';
 import ItemForm from './components/ItemForm';
 import Item from './components/Item';
+import Icon from 'react-native-fa-icons';
 
 const ItemJson = {
   name: "",
@@ -30,6 +31,8 @@ export default class App extends React.Component {
       editPreviousAmounts: []
     };
   }
+
+
 
   componentDidMount() {
     this.get_items();
@@ -94,7 +97,6 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <ScrollView>
           {items}
-
           <Modal
             animationType="slide"
             transparent={false}
@@ -109,7 +111,9 @@ export default class App extends React.Component {
             <TouchableHighlight style={styles.hideModal} onPress={() => {
               this.existingModalVisisble(!this.state.existingModalVisisble);
             }}>
-              <Text> x </Text>
+              <Text style={{ fontSize: 35, color: 'black' }}>
+                <Icon name='close' allowFontScaling />
+              </Text>
             </TouchableHighlight>
           </Modal>
         </ScrollView>

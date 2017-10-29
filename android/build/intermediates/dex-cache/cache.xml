@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/com.facebook.soloader-soloader-0.1.0_7c01e1c6dbd987ef5fbdfb5299dfb8f9de6055d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/javax.inject-1_a9cc1dd3c1c2bad910dc5aacb0ae9097aa07abe0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/bolts-tasks-1.4.0_717fc1b070ef787836eb45f423312417edd93d44.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/okio-1.13.0_3aa60909740735ecf945487f4ddba6de155bd8ff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-drawee-1.3.0_bcd27c5e8daf4e1989ca654f96cef0ec31e46cce.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-base-1.3.0_f7b790b14f40a4b43375a18f2aed43074743c792.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.48.4/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/infer-annotations-4.0_19477d7c461ae0f8419f2ce8e03ec378bd38fc5a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/staticlayout-proxy-1.0_6dce3eaeba82af04f450f0a540075197031df69f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-1.3.0_beabc8d7b3748a79d494345b4cd27758552b69ce.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/com.android.support-support-v4-23.0.1_195704bf7d275fde7d02b249a71ac508afaa024a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_952cc6c1e693c56e215aff085893bd6131713ffa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/jsr305-3.0.0_e3106b386c92682d152d5040020e0ea359eaa060.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-fresco-1.3.0_8e34a0a731fce6c197cff9ccc83e30747c6f457a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/okhttp-3.6.0_8df5b7e7493513f140e54cd29dfa966cc671bdc5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/com.android.support-appcompat-v7-23.0.1_3f5e9b9403ef4b1f128ad44d14f3c2fffab170db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/support-annotations-23.0.1_2c24959c02d43625da70cabfed2706310a437bf4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_7c6a67a8b0d165c967b3b38d73c5cb7652298854.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/internal_impl-23.0.1_7a9abb634e0ea294a33b7fa5ae0a5a6b5768747a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-fbcore-1.3.0_5e23880a37345c73001e280df9c52cadf251d7c3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/okhttp-urlconnection-3.6.0_b5d0a305682c1bd00360db56414b768ff77b23e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.48.4/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="56d3e81fee5f47a7a12ab65f4620f580c9c71d1e">
+        <dex dex="/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/pre-dexed/release/com.facebook.react-react-native-0.48.4_3a8754faee5d3fd63404082509a89bb813570297.jar" />
+    </item>
+
+</items>
