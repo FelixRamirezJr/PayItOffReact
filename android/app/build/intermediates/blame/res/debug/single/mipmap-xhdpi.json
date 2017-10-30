@@ -4,6 +4,10 @@
         "source": "/Users/felix/MyProjects/pay-it-off/android/app/src/main/res/mipmap-xhdpi/payment.png"
     },
     {
+        "merged": "/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi/exchange.png",
+        "source": "/Users/felix/MyProjects/pay-it-off/android/app/src/main/res/mipmap-xhdpi/exchange.png"
+    },
+    {
         "merged": "/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
         "source": "/Users/felix/MyProjects/pay-it-off/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     }
