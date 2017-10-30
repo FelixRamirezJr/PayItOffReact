@@ -6,5 +6,9 @@
     {
         "merged": "/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/res/merged/release/mipmap-mdpi/payment.png",
         "source": "/Users/felix/MyProjects/pay-it-off/android/app/src/main/res/mipmap-mdpi/payment.png"
+    },
+    {
+        "merged": "/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/res/merged/release/mipmap-mdpi/exchange.png",
+        "source": "/Users/felix/MyProjects/pay-it-off/android/app/src/main/res/mipmap-mdpi/exchange.png"
     }
 ]
