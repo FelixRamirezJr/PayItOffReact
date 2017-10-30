@@ -84,6 +84,7 @@ export default class Item extends React.Component {
             title={this.state.popupTitle}
             placeholder="100"
             visible={ this.state.promptVisible }
+            textInputProps={{keyboardType: 'numeric'}}
             onCancel={ () => this.setState({
               promptVisible: false,
               message: "You cancelled"
