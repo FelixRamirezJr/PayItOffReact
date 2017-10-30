@@ -57,7 +57,7 @@ MERGED from [org.webkit:android-jsc:r174650] /Users/felix/MyProjects/pay-it-off/
 	android:allowBackup
 		ADDED from /Users/felix/MyProjects/pay-it-off/android/app/src/main/AndroidManifest.xml:15:7-33
 	android:icon
-		ADDED from /Users/felix/MyProjects/pay-it-off/android/app/src/main/AndroidManifest.xml:17:7-41
+		ADDED from /Users/felix/MyProjects/pay-it-off/android/app/src/main/AndroidManifest.xml:17:7-37
 	android:theme
 		ADDED from /Users/felix/MyProjects/pay-it-off/android/app/src/main/AndroidManifest.xml:18:7-38
 	android:name

@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/res/merged/release/mipmap-xhdpi/payment.png",
+        "source": "/Users/felix/MyProjects/pay-it-off/android/app/src/main/res/mipmap-xhdpi/payment.png"
+    },
+    {
         "merged": "/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/res/merged/release/mipmap-xhdpi/ic_launcher.png",
         "source": "/Users/felix/MyProjects/pay-it-off/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     }
