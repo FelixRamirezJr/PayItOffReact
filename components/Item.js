@@ -15,9 +15,10 @@ import Prompt from 'react-native-prompt';
 export default class Item extends React.Component {
 
   constructor(props) {
-    super()
+    super(props);
     this.state = {
-      modalVisible: false
+      modalVisible: false,
+      popupTitle: "Paid '" + this.props.name + "' how much?"
     };
   }
 
@@ -26,23 +27,29 @@ export default class Item extends React.Component {
   }
 
   updateAmount = ( sub_amount ) => {
-    var diff = parseFloat( this.props.amount ) - parseFloat( sub_amount );
-    if (diff == undefined || diff == NaN){
-      alert("Looks like there is a bug with this... Going to set to zero");
-      return false;
-    } else {
+    var message = null;
+    var diff = parseFloat( this.props.amount ) - parseFloat( this.props.beautify(sub_amount) );
+    if ( diff == undefined || isNaN(diff) )
+    {
+      if( !this.state.popupTitle.includes("ONLY NUMBERS") ) {
+        this.setState({ popupTitle: this.state.popupTitle + " ( ONLY NUMBERS PLEASE )" });
+      }
+    }
+    else
+    {
       diff = +diff.toFixed(2);
-    }
-    if( diff < 0 ) {
-      // overpaid!
-      alert("You overpaid! But congrats you paid off " + this.props.name);
-      this.props.removeItem( this.props.name );
-    } else if( diff == 0 ) {
-      alert("Congrats! You paid off " + this.props.name);
-      this.props.removeItem( this.props.name );
-    } else {
+      if( diff < 0 )
+      {
+        message = "You overpaid! But congrats you paid off " + this.props.name;
+      } else if( diff == 0 ) {
+        message = "Congrats! You paid off" + this.props.name;
+      }
       this.props.add_item( this.props.name, diff.toString() );
+      this.setState({promptVisible: false}, function() {
+      });
+
     }
+    if( message ) { alert(message); }
   }
 
   pay = () => {
@@ -54,7 +61,10 @@ export default class Item extends React.Component {
   }
 
   render() {
-    var popupTitle = "Paid " + this.props.name + " how much?";
+    var paidButton = null;
+    if( parseFloat( this.props.amount ) > 0 ){
+      paidButton = <Button onPress={this.pay} title="Paid" />;
+    }
     return (
       <View style={styles.container}>
         <TouchableHighlight onPress={() => { this.edit() }}>
@@ -68,13 +78,10 @@ export default class Item extends React.Component {
           </View>
         </TouchableHighlight>
 
-        <Button
-          onPress={this.pay}
-          title="Paid"
-        />
+        {paidButton}
 
         <Prompt
-            title={popupTitle}
+            title={this.state.popupTitle}
             placeholder="100"
             visible={ this.state.promptVisible }
             onCancel={ () => this.setState({
@@ -82,7 +89,6 @@ export default class Item extends React.Component {
               message: "You cancelled"
             }) }
             onSubmit={ (value) => {
-              this.setState({promptVisible: false});
               this.updateAmount(value);
             }
           }/>

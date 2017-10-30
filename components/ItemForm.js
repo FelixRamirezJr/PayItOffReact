@@ -33,16 +33,16 @@ export default class ItemForm extends React.Component {
     }
     var mainItemFunction = "Update";
     if ( newItem ) {
-      mainItemFunction = "Add";
+      mainItemFunction = "Create";
     }
 
     if( !newItem ) {
       //deleteButton = <Button style={styles.remove_item_button} onPress={this.delete} title="Remove" />;
       deleteButton = <TouchableHighlight
                       onPress={() => {
-                        this.delete
+                        this.delete()
                       }}>
-                        <Text style={styles.remove_item_button}> Remove </Text>
+                        <Text style={styles.remove_item_button}> Remove Item </Text>
                       </TouchableHighlight>;
     }
 
@@ -53,9 +53,10 @@ export default class ItemForm extends React.Component {
                    onChangeText={(name) => this.setState({name})}
                    value={this.state.name}
         />
-        <TextInput style={styles.input}
+        <TextInput style={styles.amount_input}
                    onChangeText={(amount) => this.setState({amount})}
                    value={this.state.amount}
+                   keyboardType="numeric"
                    placeholder="Amount" />
 
         <TouchableHighlight
@@ -84,6 +85,12 @@ const styles = StyleSheet.create({
     width: '100%',
     padding: 5,
     fontSize: 35
+  },
+  amount_input: {
+    width: '100%',
+    padding: 5,
+    fontSize: 35,
+    color: "#4DB6AC"
   },
   add_item_button: {
     marginTop: 5,

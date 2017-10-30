@@ -66,12 +66,29 @@ export default class App extends React.Component {
    }
  }
 
+ beautify = (amount) => {
+   return amount.replace(/[^0-9.-]/g, "");
+ }
+
   add_item = (name, amount) => {
-    try {
-      AsyncStorage.setItem(name, amount);
-      this.refresh();
-    } catch (error) {
-      console.log("Error could not save data");
+    var errors = [];
+
+    if ( !name || name.length == 0) {
+      errors.push("Name can't be blank");
+    }
+    if ( !amount || amount.length == 0 ) {
+      errors.push("Amount can't be blank and input must be numbers and decimals");
+    }
+
+    if( errors.length == 0 ){
+      try {
+        AsyncStorage.setItem(name, this.beautify(amount) );
+        this.refresh();
+      } catch (error) {
+        console.log("Error could not save data");
+      }
+    } else {
+      alert( errors.join("\n") );
     }
   }
 
@@ -91,7 +108,12 @@ export default class App extends React.Component {
 
   render() {
     let items = this.state.items.map((result, i, store) =>
-       <Item key={i} name={store[i][0]} amount={store[i][1]} openItem={this.openItem} edit={false} removeItem={this.removeItem} add_item={this.add_item} />
+       <Item key={i} name={store[i][0]} amount={store[i][1]}
+                     openItem={this.openItem}
+                     edit={false}
+                     removeItem={this.removeItem}
+                     beautify={this.beautify}
+                     add_item={this.add_item} />
      );
     return (
       <View style={styles.container}>
@@ -117,7 +139,8 @@ export default class App extends React.Component {
             </TouchableHighlight>
           </Modal>
         </ScrollView>
-        <FAB buttonColor="red" iconTextColor="#FFFFFF"
+        <FAB buttonColor="#212121" iconTextColor="#FFFFFF"
+                              iconTextComponent={<Icon name="plus"/>}
                                onClickAction={() => {
                                  this.setState({ editName: "",
                                                  editAmount: "",
