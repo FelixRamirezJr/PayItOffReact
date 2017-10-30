@@ -3,7 +3,7 @@ import { StyleSheet,
          Text,
          View,
          Modal,
-         TouchableHighlight,
+         TouchableOpacity,
          Button,
          TextInput
        } from 'react-native';
@@ -38,12 +38,12 @@ export default class ItemForm extends React.Component {
 
     if( !newItem ) {
       //deleteButton = <Button style={styles.remove_item_button} onPress={this.delete} title="Remove" />;
-      deleteButton = <TouchableHighlight
+      deleteButton = <TouchableOpacity
                       onPress={() => {
                         this.delete()
                       }}>
                         <Text style={styles.remove_item_button}> Remove Item </Text>
-                      </TouchableHighlight>;
+                      </TouchableOpacity>;
     }
 
     return (
@@ -59,13 +59,16 @@ export default class ItemForm extends React.Component {
                    keyboardType="numeric"
                    placeholder="Amount" />
 
-        <TouchableHighlight
+        <TouchableOpacity
         style={styles.add_item_button}
         onPress={() => {
+          if( mainItemFunction == "Update" ) {
+            this.delete();
+          }
           this.props.add_item( this.state.name, this.state.amount );
         }}>
           <Text style={styles.mainItemFunction}> { mainItemFunction } </Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
         { deleteButton }
 
       </View>

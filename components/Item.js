@@ -4,13 +4,12 @@ import { StyleSheet,
          View,
          TextInput,
          Modal,
-         TouchableHighlight,
+         TouchableOpacity,
          Button,
          Platform
        } from 'react-native';
 
 import Prompt from 'react-native-prompt';
-
 
 export default class Item extends React.Component {
 
@@ -67,7 +66,7 @@ export default class Item extends React.Component {
     }
     return (
       <View style={styles.container}>
-        <TouchableHighlight onPress={() => { this.edit() }}>
+        <TouchableOpacity onPress={() => { this.edit() }}>
           <View>
             <Text style={styles.itemName}>
               { this.props.name }
@@ -76,7 +75,7 @@ export default class Item extends React.Component {
              ${ this.pretty(this.props.amount) }
             </Text>
           </View>
-        </TouchableHighlight>
+        </TouchableOpacity>
 
         {paidButton}
 

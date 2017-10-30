@@ -5,6 +5,7 @@ import { StyleSheet,
          ScrollView,
          Modal,
          AsyncStorage,
+         TouchableOpacity,
          TouchableHighlight } from 'react-native';
 import FAB from 'react-native-fab';
 import ItemForm from './components/ItemForm';
@@ -70,6 +71,14 @@ export default class App extends React.Component {
    return amount.replace(/[^0-9.-]/g, "");
  }
 
+ sortByKey = (array, key) => {
+     return array.sort(function(a, b) {
+         var x = a[key];
+         var y = b[key];
+         return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+     });
+  }
+
   add_item = (name, amount) => {
     var errors = [];
 
@@ -101,7 +110,7 @@ export default class App extends React.Component {
   {
     AsyncStorage.getAllKeys((err, keys) => {
       AsyncStorage.multiGet(keys, (err, stores) => {
-        this.setState({ items: stores });
+        this.setState({ items: this.sortByKey(stores, 'key') });
       });
     });
   }
@@ -130,13 +139,13 @@ export default class App extends React.Component {
                      previousAmounts={this.state.editPreviousAmounts}
                      removeItem={this.removeItem}
             />
-            <TouchableHighlight style={styles.hideModal} onPress={() => {
+            <TouchableOpacity style={styles.hideModal} onPress={() => {
               this.existingModalVisisble(!this.state.existingModalVisisble);
             }}>
               <Text style={{ fontSize: 35, color: 'black' }}>
                 <Icon name='close' allowFontScaling />
               </Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
           </Modal>
         </ScrollView>
         <FAB buttonColor="#212121" iconTextColor="#FFFFFF"

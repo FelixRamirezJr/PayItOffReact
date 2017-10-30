@@ -1,4 +1,4 @@
-#Sun Oct 29 20:10:19 PDT 2017
+#Sun Oct 29 20:24:28 PDT 2017
 base.0=/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main
 renamed.0=classes.dex
 file.0=/Users/felix/MyProjects/pay-it-off/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex
